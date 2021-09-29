@@ -1,0 +1,19 @@
+// Variables
+@import './_variables.scss';
+
+// Mixins & Functions
+@import './_mixins_functions.scss';
+
+// General
+@import './_general.scss';
+
+// Utilities
+@import './utilities';
+
+// Components
+@import './header';
+@import './portfolio';
+@import './skills';
+@import './contact';
+@import './project';
+@import './footer';

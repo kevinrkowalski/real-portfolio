@@ -1,0 +1,133 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:target {
+    scroll-margin-top: 5rem;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: $font-family-serif;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 3.75em;
+}
+
+h2 {
+    font-size: 3.25em;
+}
+
+h3 {
+    font-size: 2.75em;
+}
+
+section {
+    padding: 4rem 0;
+
+    @include for-size(tablet) {
+        padding: 2rem 0;
+    }
+}
+
+main {
+    margin-top: 77px;
+}
+
+p {
+    color: $gray-text;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    &--fluid {
+        padding: 0;
+    }
+
+    @include for-size(desktop) {
+        max-width: 70rem;
+    }
+
+    @include for-size(widescreen) {
+        max-width: 90rem;
+    }
+}
+
+.serif {
+    font-family: $font-family-serif;
+}
+
+.hero {
+    min-height: 75vh;
+    gap: 2rem;
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+    &-image-container {
+        position: relative;
+
+        @include for-size(desktop) {
+            &::before {
+                content: '';
+                display: block;
+                background-image: url('../images/icons/dots-long-vertical.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: 5%;
+                left: -13%;
+                width: 112px;
+                height: 300px;
+                z-index: -1;
+            }
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            background-image: url('../images/icons/dots.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: 74%;
+            left: 86%;
+            width: 112px;
+            height: 138px;
+        }
+    }
+
+    &-divider {
+        border: 1px solid $gray-light;
+        margin-bottom: 1rem;
+    }
+}

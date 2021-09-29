@@ -1,0 +1,13 @@
+.project {
+
+    h1 {
+        width: max-content;
+    }
+
+    &-img {
+
+        @include for-size(desktop) {
+            max-width: 60rem;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.footer {
+    background-color: $gray-light;
+    padding: 1.5rem 0;
+
+    &-arrow {
+        transform: rotate(180deg);
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+}

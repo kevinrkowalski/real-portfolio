@@ -1,0 +1,65 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 9;
+    width: 100%;
+
+    @include for-size(tablet) {
+        width: unset;
+    }
+}
+
+.brand {
+    background-color: $gray-dark;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.75em;
+}
+
+.main-nav {
+    ul {
+        width: 100%;
+        flex-direction: column;
+
+        @include for-size(tablet) {
+            flex-direction: row;
+        }
+    }
+
+    li {
+        width: 100%;
+
+        @include for-size(tablet) {
+            width: unset;
+        }
+
+        &:not(.brand) {
+            text-align: center;
+
+            @include for-size(tablet) {
+                margin-left: 1rem;
+            }
+
+            a {
+                width: 100%;
+            }
+        }
+    }
+
+    a {
+        display: inline-block;
+        padding: 1.25rem 2rem;
+    }
+}
+
+.menu-icon {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    padding: 1.25rem 2rem;
+    cursor: pointer;
+}

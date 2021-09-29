@@ -1,0 +1,21 @@
+.skills {
+    background-color: $light-green;
+    color: #fff;
+    margin-bottom: 5rem;
+
+    &-list li {
+        flex: 1 0 50%;
+        text-align: center;
+        margin: 2rem 0;
+
+        @include for-size(tablet) {
+            flex: 1 0 20%;
+        }
+    }
+
+    &-icon {
+        width: 7rem;
+        height: 7rem;
+        object-fit: contain;
+    }
+}

@@ -1,0 +1,77 @@
+.contact {
+
+    &-grid {
+        gap: 3rem;
+        margin: 4rem 0;
+
+        @include for-size(desktop) {
+            gap: 7rem;
+        }
+    }
+
+    &-form {
+        flex-direction: column;
+        margin-left: auto;
+        width: 100%;
+
+        @include for-size(tablet) {
+            max-width: 18.75rem;
+        }
+    }
+
+    &-list {
+        text-align: center;
+
+        @include for-size(tablet) {
+            text-align: left;
+        }
+    }
+
+    label {
+        color: $gray-text;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        border: 1px solid $gray-text;
+        font-size: 1rem;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        font-family: $font-family;
+        width: 100%;
+    }
+
+    button[type="submit"] {
+        padding: 0.75rem;
+        font-size: 1.1em;
+        background-color: $light-green;
+        color: $gray-text;
+        border: none;
+    }
+}
+
+.input-container {
+    position: relative;
+
+    label {
+        background-color: #fff;
+        padding: 0 0.5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0.3rem, 0.7rem);
+        transition: transform 0.3s ease-in-out;
+        width: min-content;
+        z-index: 2;
+    }
+
+    input,
+    textarea {
+
+        &:focus + label,
+        &:not(:placeholder-shown) + label {
+            transform: translate(0.3rem, -0.8rem);
+        }
+    }
+}
