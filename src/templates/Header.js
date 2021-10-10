@@ -9,7 +9,7 @@ const Header = () => {
     const isBrowser = typeof window !== 'undefined'
     const initialMobileState = (isBrowser && window.innerWidth < 768) ? true : false
     const [isMobile, setIsMobile] = useState(initialMobileState)
-    const [open, setOpen] = useState(!isMobile)
+    const [open, setOpen] = useState(false)
 
     useEffect(() => {
         const handleResize = () => {
