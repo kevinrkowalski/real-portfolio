@@ -10,8 +10,10 @@ const Header = () => {
     const initialMobileState = (isBrowser && window.innerWidth < 768) ? true : false
     const [isMobile, setIsMobile] = useState(initialMobileState)
     const [open, setOpen] = useState(false)
+    const [hasMounted, setHasMounted] = useState(false)
 
     useEffect(() => {
+        setHasMounted(true)
         const handleResize = () => {
             setIsMobile(window.innerWidth < 768 ? true : false)
             setOpen(isMobile ? false : true)
@@ -26,7 +28,7 @@ const Header = () => {
         }
     }
 
-    const linkClass = (isMobile && open === false) ? 'hidden' : ''
+    const linkClass = (!hasMounted || (isMobile && open === false)) ? 'hidden' : ''
 
     return (
         <header className="header">
