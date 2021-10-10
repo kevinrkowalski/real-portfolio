@@ -18,19 +18,19 @@ const Seo = ({ children, title, template, description }) => {
   const pageDescription = description || defaultDescription
 
   const isBrowser = typeof window !== 'undefined'
-  let location = ''
+  const location = useLocation()
+  let locationHref = ''
   if (isBrowser) {
-    location = useLocation()
     if (location.pathname === '/') {
       pageTitleTemplate = '%s | Web Developer & Designer'
     }
     // Remove '#' from URL
-    location = location.href.split('#')[0]
+    locationHref = location.href.split('#')[0]
   }
 
   return (
     <Helmet title={pageTitle} titleTemplate={pageTitleTemplate}>
-      <link rel="canonical" href={location} />
+      <link rel="canonical" href={locationHref} />
       <meta property="og:url" content={siteUrl} />
       <meta property="og:title" content={defaultTitle} />
       <meta property="og:description" content={pageDescription} />
@@ -53,7 +53,7 @@ const query = graphql`
         defaultTitle: title
         titleTemplate
         defaultDescription: description
-        siteUrl: url
+        siteUrl
       }
     }
   }

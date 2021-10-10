@@ -3,7 +3,7 @@ module.exports = {
     title: "Kevin Kowalski | Web Develeoper & Designer",
     titleTemplate: "%s | Kevin Kowalski - Web Developer",
     description: "Kevin Kowalski is a web designer and developer for hire. Check out some of my latest work or reach out and start a project!",
-    url: "https://kevinkowalski.dev"
+    siteUrl: "https://kevinkowalski.dev"
   },
   plugins: [
     "gatsby-plugin-image",
