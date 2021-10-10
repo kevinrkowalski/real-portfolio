@@ -142,7 +142,16 @@
     padding: 0.5rem 1rem;
 
     &--gray-light {
+        background-image: linear-gradient(to right, #fff, $gray-light);
+        background-size: 300%;
+        background-position: left;
         border-color: $gray-light;
+        transition: background-position 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            background-position: right; 
+        }
     }
 }
 

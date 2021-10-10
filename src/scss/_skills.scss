@@ -17,5 +17,14 @@
         width: 7rem;
         height: 7rem;
         object-fit: contain;
+
+        &-text {
+            margin-bottom: 0;
+            text-transform: capitalize;
+
+            &--uppercase {
+                text-transform: uppercase;
+            }
+        }
     }
 }

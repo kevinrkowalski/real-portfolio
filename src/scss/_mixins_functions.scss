@@ -1,17 +1,13 @@
+$device-sizes: (
+    'tablet': 48rem,
+    'desktop': 80rem,
+    'widescreen': 120rem
+);
+
 @mixin for-size($size) {
-    @if $size == tablet {
-        @media (min-width: 48rem) {
-            @content;
-        }
-    }
-    @if $size == desktop {
-        @media (min-width: 80rem) {
-            @content;
-        }
-    }
-    @if $size == widescreen {
-        @media (min-width: 120rem) {
-            @content;
-        }
+    $width: map-get($device-sizes, $size);
+
+    @media (min-width: $width) {
+        @content;
     }
 }

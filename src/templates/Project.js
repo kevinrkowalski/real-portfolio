@@ -1,23 +1,11 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+
 import Header from './Header'
 import Footer from './Footer'
 
 const Project = ({ children, title, image }) => {
-    const data = useStaticQuery(graphql`{
-        allFile(
-            filter: {relativeDirectory: {eq: "projects"}}) {
-            edges {
-                node {
-                    publicURL
-                }
-            }
-        }
-    }`)
-
-    let imageSrc = data.allFile.edges.find(( node ) => node.node.publicURL.includes(image))
-    imageSrc = imageSrc.node.publicURL ?? ""
-
+    const imageData = getImage(image)
     return (
         <>
             <Header />
@@ -26,7 +14,7 @@ const Project = ({ children, title, image }) => {
                     <div className="container">
                         <div className="project">
                             <h1 className="highlight">{title}</h1>
-                            <img className="project-img" src={imageSrc} alt="" />
+                            <GatsbyImage image={imageData} alt={title} />
                             <div className="project-content">
                                 {children}
                             </div>

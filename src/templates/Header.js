@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { Link } from "gatsby"
 
 // images
 import menuIcon from '../images/icons/menu.svg'
@@ -34,10 +35,10 @@ const Header = () => {
         <header className="header">
             <nav className="main-nav">
                 <ul className="list-reset flex align-center">
-                    <li className="brand"><a href="/#">Kevin K.</a></li>
-                    <li className={toggleClass()}><a onClick={handleClick} href="#work">MY WORK</a></li>
-                    <li className={toggleClass()}><a onClick={handleClick} href="#about">ABOUT</a></li>
-                    <li className={toggleClass()}><a onClick={handleClick} href="#contact">CONTACT</a></li>
+                    <li className="brand"><Link to="/">Kevin K.</Link></li>
+                    <li className={toggleClass()}><Link onClick={handleClick} to="/#work">MY WORK</Link></li>
+                    <li className={toggleClass()}><Link onClick={handleClick} to="/#skills">SKILLS</Link></li>
+                    <li className={toggleClass()}><Link onClick={handleClick} to="/#contact">CONTACT</Link></li>
                 </ul>
             </nav>
             {isMobile &&

@@ -1,13 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: "Portfolio",
+    title: "Kevin Kowalski | Web Develeoper & Designer",
+    titleTemplate: "%s | Kevin Kowalski - Web Developer",
+    description: "Kevin Kowalski is a web designer and developer for hire. Check out some of my latest work or reach out and start a project!",
+    url: "https://kevinkowalski.dev"
   },
   plugins: [
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "1234567890",
+        trackingId: "UA-76756923-1",
       },
     },
     "gatsby-plugin-react-helmet",
@@ -15,7 +18,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/icons/code.svg",
       },
     },
     "gatsby-plugin-sharp",
@@ -24,10 +27,18 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/src/images/`,
       },
       __key: "images",
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: `${__dirname}/src/projects`
+      }
+    },
+    'gatsby-transformer-remark',
     'gatsby-plugin-sass'
   ],
 };
