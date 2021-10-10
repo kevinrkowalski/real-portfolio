@@ -27,7 +27,7 @@ const Header = () => {
     }
 
     const toggleClass = () => {
-        if (isMobile && open === false) {
+        if (!isBrowser || (isMobile && open === false)) {
             return 'hidden'
         }
         return null
@@ -44,7 +44,9 @@ const Header = () => {
                 </ul>
             </nav>
             {isMobile &&
-                <button className="menu-icon" onClick={handleClick}><img src={open ? closeIcon : menuIcon} alt={`${open ? 'closed' : 'open'} menu icon`} /></button>
+                <button className="menu-icon" onClick={handleClick}>
+                    <img src={open ? closeIcon : menuIcon} alt={`${open ? 'closed' : 'open'} menu icon`} />
+                </button>
             }
         </header>
     )
