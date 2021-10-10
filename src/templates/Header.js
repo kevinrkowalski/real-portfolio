@@ -6,7 +6,9 @@ import menuIcon from '../images/icons/menu.svg'
 import closeIcon from '../images/icons/close.svg'
 
 const Header = () => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768 ? true : false)
+    const isBrowser = typeof window !== 'undefined'
+    const initialMobileState = (isBrowser && window.innerWidth < 768) ? true : false
+    const [isMobile, setIsMobile] = useState(initialMobileState)
     const [open, setOpen] = useState(!isMobile)
 
     useEffect(() => {
