@@ -26,21 +26,16 @@ const Header = () => {
         }
     }
 
-    const toggleClass = () => {
-        if (!isBrowser || (isMobile && open === false)) {
-            return 'hidden'
-        }
-        return null
-    }
+    const linkClass = (isMobile && open === false) ? 'hidden' : ''
 
     return (
         <header className="header">
             <nav className="main-nav">
                 <ul className="list-reset flex align-center">
                     <li className="brand"><Link to="/">Kevin K.</Link></li>
-                    <li className={toggleClass()}><Link onClick={handleClick} to="/#work">MY WORK</Link></li>
-                    <li className={toggleClass()}><Link onClick={handleClick} to="/#skills">SKILLS</Link></li>
-                    <li className={toggleClass()}><Link onClick={handleClick} to="/#contact">CONTACT</Link></li>
+                    <li className={linkClass}><Link onClick={handleClick} to="/#work">MY WORK</Link></li>
+                    <li className={linkClass}><Link onClick={handleClick} to="/#skills">SKILLS</Link></li>
+                    <li className={linkClass}><Link onClick={handleClick} to="/#contact">CONTACT</Link></li>
                 </ul>
             </nav>
             {isMobile &&
