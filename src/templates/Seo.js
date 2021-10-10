@@ -17,12 +17,15 @@ const Seo = ({ children, title, template, description }) => {
   let pageTitleTemplate = template || titleTemplate
   const pageDescription = description || defaultDescription
 
-  let location = useLocation()
-  if (location.pathname === '/') {
-    pageTitleTemplate = '%s | Web Developer & Designer'
+  const isBrowser = typeof window !== 'undefined'
+  if (isBrowser) {
+    let location = useLocation()
+    if (location.pathname === '/') {
+      pageTitleTemplate = '%s | Web Developer & Designer'
+    }
+    // Remove '#' from URL
+    location = location.href.split('#')[0]
   }
-  // Remove '#' from URL
-  location = location.href.split('#')[0]
 
   return (
     <Helmet title={pageTitle} titleTemplate={pageTitleTemplate}>
