@@ -18,8 +18,9 @@ const Seo = ({ children, title, template, description }) => {
   const pageDescription = description || defaultDescription
 
   const isBrowser = typeof window !== 'undefined'
+  let location = ''
   if (isBrowser) {
-    let location = useLocation()
+    location = useLocation()
     if (location.pathname === '/') {
       pageTitleTemplate = '%s | Web Developer & Designer'
     }
