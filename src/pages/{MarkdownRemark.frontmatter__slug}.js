@@ -7,7 +7,7 @@ export default function ProjectTemplate({ data: { markdownRemark } }) {
   const { frontmatter, html } = markdownRemark
 
   return (
-    <Project title={frontmatter.title} image={frontmatter.image}>
+    <Project title={frontmatter.title} images={frontmatter.images}>
       <Seo title={frontmatter.title} description={frontmatter.description} />
       <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
     </Project>
@@ -21,7 +21,7 @@ export const pageQuery = graphql`
       frontmatter {
         title,
         description,
-        image {
+        images {
           childImageSharp {
             gatsbyImageData(
               placeholder: BLURRED,

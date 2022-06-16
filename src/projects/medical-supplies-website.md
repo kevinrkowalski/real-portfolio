@@ -2,8 +2,14 @@
 title: 'Medical Supplies Website'
 description: 'This site was created for a medical sales professional who had previously only been selling products through catalogs. He wanted the site to feel fun and lighthearted, while still being professional and clean.'
 slug: '/projects/medical-supplies-website/'
-thumbnail: '../images/projects/midmanmed-desktop.jpg'
-image: '../images/projects/midmanmed-mockup.png'
+thumbnail: '../images/projects/midmanmed/midmanmed-desktop.jpg'
+images: [
+  '../images/projects/midmanmed/midmanmed-mockup.png',
+  '../images/projects/midmanmed/midmanmed-home.png',
+  '../images/projects/midmanmed/midmanmed-product.png',
+  '../images/projects/midmanmed/midmanmed-shop-small.png',
+  '../images/projects/midmanmed/midmanmed-contact.png'
+]
 ---
 
 This site was created for a medical sales professional who had previously only been selling products through catalogs. He wanted the site to feel fun and lighthearted, while still being professional and clean. 
