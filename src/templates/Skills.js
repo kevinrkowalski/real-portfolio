@@ -34,10 +34,12 @@ const Skills = () => {
     )
   })
 
-  if (inView) {
-    animate('.skills-list li', { y: 0, opacity: 1 }, { delay: stagger(0.1) })
-  } else {
-    animate('.skills-list li', { y: -100, opacity: 0 })
+  if (typeof document !== 'undefined') {
+    if (inView) {
+      animate('.skills-list li', { y: 0, opacity: 1 }, { delay: stagger(0.1) })
+    } else {
+      animate('.skills-list li', { y: -100, opacity: 0 })
+    }
   }
 
   return (
