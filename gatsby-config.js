@@ -5,6 +5,7 @@ module.exports = {
     description: "Kevin Kowalski is a web designer and developer for hire. Check out some of my latest work or reach out and start a project!",
     siteUrl: "https://kevinkowalski.dev"
   },
+  trailingSlash: "always",
   plugins: [
     "gatsby-plugin-image",
     {
