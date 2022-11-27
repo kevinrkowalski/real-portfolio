@@ -37,6 +37,7 @@ const Header = () => {
                     <li className="brand"><Link to="/">Kevin K.</Link></li>
                     <li className={linkClass}><Link onClick={handleClick} to="/#work">MY WORK</Link></li>
                     <li className={linkClass}><Link onClick={handleClick} to="/#skills">SKILLS</Link></li>
+                    <li className={linkClass}><Link to="/areas-i-serve/">AREAS I SERVE</Link></li>
                     <li className={linkClass}><Link onClick={handleClick} to="/#contact">CONTACT</Link></li>
                 </ul>
             </nav>

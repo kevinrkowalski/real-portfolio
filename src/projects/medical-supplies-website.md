@@ -1,4 +1,5 @@
 ---
+type: 'project'
 title: 'Medical Supplies Website'
 description: 'This site was created for a medical sales professional who had previously only been selling products through catalogs. He wanted the site to feel fun and lighthearted, while still being professional and clean.'
 slug: '/projects/medical-supplies-website/'

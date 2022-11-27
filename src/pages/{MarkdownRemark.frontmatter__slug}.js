@@ -6,12 +6,17 @@ import Seo from '../templates/Seo'
 export default function ProjectTemplate({ data: { markdownRemark } }) {
   const { frontmatter, html } = markdownRemark
 
-  return (
-    <Project title={frontmatter.title} images={frontmatter.images}>
-      <Seo title={frontmatter.title} description={frontmatter.description} />
-      <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
-    </Project>
-  )
+  if (frontmatter.type === 'project') {
+    return (
+      <Project title={frontmatter.title} images={frontmatter.images}>
+        <Seo title={frontmatter.title} description={frontmatter.description} />
+        <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
+      </Project>
+    )
+  } else {
+    return <h1>Test</h1>
+  }
+
 }
 
 export const pageQuery = graphql`
@@ -19,6 +24,7 @@ export const pageQuery = graphql`
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {
+        type,
         title,
         description,
         images {

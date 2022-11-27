@@ -1,4 +1,5 @@
 ---
+type: 'project'
 title: 'Therapist Website'
 description: 'This website was needed by a Therapist looking to grow her online presence. She had never had a website before and was looking to present information to new potential clientel in a friendly and inviting way.'
 slug: '/projects/therapist-website/'
